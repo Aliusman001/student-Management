@@ -1,0 +1,112 @@
+<%-include("partials/header");-%>
+<section class="resultContainer bg-white">
+    <section class="resultHeader">
+        <section class="row">
+            <section class="col-2 mt-2"> <img src="image/logo.jpg" class=" logo" alt="Logo" width="80px"></section>
+            <section class="col-10">
+                <h4 class="text-dark text-center university">UNIVERSITY OF OKARA</h4>
+                <small class="text-dark ">A public Sector University Establish Under Goverment of the punjab Act XIII of 2016</small>
+            </section>
+        </section>
+    </section>
+    <form action="submitResultCard" method="post">
+        <input type="hidden" name="Name" value="<%=data.Name%>">
+        <input type="hidden" name="RollNumber" value="<%=data.RollNumber%>">
+        <input type="hidden" name="Courses" value="<%=data.Courses%>">
+        <input type="hidden" name="Gender" value="<%=data.Gender%>">
+        <input type="hidden" name="Semester" value="<%=data.Semester%>">
+        <input type="hidden" name="session" value="<%=data.Session%>">
+<section class="container">
+    <section class="row mt-4">
+        <section class="col-6">
+            <section class="d-flex"><h6  class="text-darks">Name:</h6><h6 class="text-dark margin"><%=data.Name%></h6></section>
+            <section class="d-flex"><h6  class="text-darks">Roll Number:</h6><h6 class="text-dark margin"><%=data.RollNumber%></h6></section>
+            <section class="d-flex"><h6  class="text-darks">Course:</h6><h6 class="text-dark margin"><%=data.Courses%></h6></section>
+        </section>
+        <section class="col-6">
+            <section class="d-flex"><h6  class="text-darks">Gender:</h6><h6 class="text-dark margin"><%=data.Gender%></h6></section>
+            <section class="d-flex"><h6  class="text-darks">Semester:</h6><h6 class="text-dark margin"><%=data.Semester%></h6></section>
+            <section class="d-flex"><h6  class="text-darks">Session:</h6><h6 class="text-dark margin"><%=data.Session%></h6></section>
+        </section>
+    </section>
+    <h5 class="text-darks mt-4 text-center">Progress Report Of Final Exams</h5>
+</section>
+
+
+    <!-- Tabel -->
+<table class="table text-dark table-bordered table-hover mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Sno</th>
+            <th scope="col">Subject Name</th>
+            <th scope="col">Marks</th>
+            <th scope="col">Obtained Marks</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Presentage</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="row">1</td>
+            <td><input type="text" name="Subject1"  class="form-control" ></td>
+            <td><input type="text" name="Subject1Marks"  class="form-control" ></td>
+            <td><input type="text" name="Subject1ObtainedMarks"  class="form-control" ></td>
+            <td><input type="text" name="Subject1Grade"  class="form-control" ></td>
+            <td><input type="text" name="Subject1Persentage"  class="form-control" ></td>
+        </tr>
+        <tr>
+            <td scope="row">2</td>
+            <td><input type="text" name="Subject2"  class="form-control" ></td>
+            <td><input type="text" name="Subject2Marks"  class="form-control" ></td>
+            <td><input type="text" name="Subject2ObtainedMarks"  class="form-control" ></td>
+            <td><input type="text" name="Subject2Grade"  class="form-control" ></td>
+            <td><input type="text" name="Subject2Persentage"  class="form-control" ></td>
+        </tr>
+        <tr>
+            <td scope="row">3</td>
+            <td><input type="text" name="Subject3"  class="form-control" ></td>
+            <td><input type="text" name="Subject3Marks"  class="form-control" ></td>
+            <td><input type="text" name="Subject3ObtainedMarks"  class="form-control" ></td>
+            <td><input type="text" name="Subject3Grade"  class="form-control" ></td>
+            <td><input type="text" name="Subject3Persentage"  class="form-control" ></td>
+        </tr>
+        <tr>
+            <td scope="row">4</td>
+            <td><input type="text" name="Subject4"  class="form-control" ></td>
+            <td><input type="text" name="Subject4Marks"  class="form-control" ></td>
+            <td><input type="text" name="Subject4ObtainedMarks"  class="form-control" ></td>
+            <td><input type="text" name="Subject4Grade"  class="form-control" ></td>
+            <td><input type="text" name="Subject4Persentage"  class="form-control" ></td>
+        </tr>
+        <tr>
+            <td scope="row">5</td>
+            <td><input type="text" name="Subject5"  class="form-control" ></td>
+            <td><input type="text" name="Subject5Marks"  class="form-control" ></td>
+            <td><input type="text" name="Subject5ObtainedMarks"  class="form-control" ></td>
+            <td><input type="text" name="Subject5Grade"  class="form-control" ></td>
+            <td><input type="text" name="Subject5Persentage"  class="form-control" ></td>
+        </tr>
+        <tr>
+            <td colspan="2" class="text-darks p-3">Total Marks</td>
+            <td><input type="text" name="totalMarks"  class="form-control" ></td>
+            <td><input type="text" name="totalObtainedMarks"  class="form-control" ></td>
+            <td><input type="text" name="totalGrade"  class="form-control" ></td>
+            <td><input type="text" name="totalPersentage"  class="form-control" ></td>
+        </tr>
+
+    </tbody>
+</table>
+<section class="resultHeader text-center">
+
+            <h6 class="text-dark text-center mt-2">...Followed Grading System...</h6>
+            <small class="text-dark ">Grade A-90 to 100%; Grade B-75 to 89%; Grade C-60 to 74%; Grade D-35 to 59%; Grade E-below 35% </small>
+            <br><small class="text-dark ">A public Sector University Establish Under Goverment of the punjab Act XIII of 2016</small>
+   
+</section>
+</section>
+<section class="containerButton">
+    <button type="submit" class="btn btn-primary form-control">Submit Result</button>
+</section>
+</form>
+
+<%-include("partials/footer")-%>

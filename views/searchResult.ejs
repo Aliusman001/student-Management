@@ -1,0 +1,147 @@
+<section class="hide">
+    <% if(user==="admin@gmail.com"){ %>
+        <%-include("partials/header");-%>
+    <% }else{ %>
+        <%-include("partials/student_header");-%>
+    <% } %>
+</section>
+<h3 class='text-white mt-3 mb-3 an text-center'>Search Result</h3>
+<section class=" hide">
+    <form action="searchResult" method="post">
+  <section class="row mt-3">
+    <section class="col-2">
+        <label for="semester">Semester</label>
+        <select name="semester" class="form-select">
+            <option selected>Select Semester</option>
+            <option value="I">I</option>
+            <option value="II">II</option>
+            <option value="III">III</option>
+            <option value="IV">IV</option>
+            <option value="V">V</option>
+            <option value="VI">VI</option>
+            <option value="VII">VII</option>
+            <option value="VIII">VIII</option>
+        </select>
+    </section>
+    <section class="form-group col-3">
+        <label for="session">Session</label><br>
+        <select name="session" id="session" class="form-select">
+                <option selected>Select Session</option>
+            <option value="2019-2023">2019-2023</option>
+            <option value="2020-2024">2020-2024</option>
+            </select>
+    </section>
+
+   <section class="col-3">
+    <section class="form-group d-flex"style='margin-top: 32px;'>
+        <input type="text" name="search" class="form-control bor">
+        <button class="btn btn-primary  borbutton">Search</button>
+       </section>
+   </section>
+  </section>
+    </form>
+</section>
+<%if(data!==null){ %>
+    <section class="resultContainer bg-white">
+        <section class="resultHeader">
+            <section class="row">
+                <section class="col-2 mt-2"> <img src="image/logo.jpg" class=" logo" alt="Logo" width="80px"></section>
+                <section class="col-10">
+                    <h4 class="text-dark text-center university">UNIVERSITY OF OKARA</h4>
+                    <small class="text-dark ">A public Sector University Establish Under Goverment of the punjab Act XIII of 2016</small>
+                </section>
+            </section>
+        </section>
+    <section class="container">
+        <section class="row mt-4">
+            <section class="col-6">
+                <section class="d-flex"><h6  class="text-darks">Name:</h6><h6 class="text-dark margin"><%=data.Name%></h6></section>
+                <section class="d-flex"><h6  class="text-darks">Roll Number:</h6><h6 class="text-dark margin"><%=data.RollNumber%></h6></section>
+                <section class="d-flex"><h6  class="text-darks">Course:</h6><h6 class="text-dark margin"><%=data.Courses%></h6></section>
+            </section>
+            <section class="col-6">
+                <section class="d-flex"><h6  class="text-darks">Gender:</h6><h6 class="text-dark margin"><%=data.Gender%></h6></section>
+                <section class="d-flex"><h6  class="text-darks">Semester:</h6><h6 class="text-dark margin"><%=data.Semester%></h6></section>
+                <section class="d-flex"><h6  class="text-darks">Session:</h6><h6 class="text-dark margin"><%=data.Session%></h6></section>
+            </section>
+        </section>
+        <h5 class="text-darks mt-4 text-center">Progress Report Of Final Exams</h5>
+    </section>
+    
+    
+        <!-- Tabel -->
+    <table class="table text-dark table-bordered table-hover mt-3">
+        <thead>
+            <tr>
+                <th scope="col">Sno</th>
+                <th scope="col">Subject Name</th>
+                <th scope="col">Marks</th>
+                <th scope="col">Obtained Marks</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Presentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-dark">
+                <td scope="row">1</td>
+                <td><%=data.SubjectOne%></td>
+                <td><%=data.Subject1Marks%></td>
+                <td><%=data.Subject1ObtainedMarks%></td>
+                <td><%=data.Subject1Grade%></td>
+                <td><%=data.Subject1Persentage%></td>
+            </tr>
+            <tr class="text-dark">
+                <td scope="row">2</td>
+                <td><%=data.Subject2%></td>
+                <td><%=data.Subject2Marks%></td>
+                <td><%=data.Subject2ObtainedMarks%></td>
+                <td><%=data.Subject2Grade%></td>
+                <td><%=data.Subject2Persentage%></td>
+            </tr>
+            <tr class="text-dark">
+                <td scope="row">3</td>
+                <td><%=data.Subject3%></td>
+                <td><%=data.Subject3Marks%></td>
+                <td><%=data.Subject3ObtainedMarks%></td>
+                <td><%=data.Subject3Grade%></td>
+                <td><%=data.Subject3Persentage%></td>
+            </tr>
+            <tr class="text-dark">
+                <td scope="row">4</td>
+                <td><%=data.Subject4%></td>
+                <td><%=data.Subject4Marks%></td>
+                <td><%=data.Subject4ObtainedMarks%></td>
+                <td><%=data.Subject4Grade%></td>
+                <td><%=data.Subject4Persentage%></td>
+            </tr>
+            <tr class="text-dark">
+                <td scope="row">5</td>
+                <td><%=data.Subject5%></td>
+                <td><%=data.Subject5Marks%></td>
+                <td><%=data.Subject5ObtainedMarks%></td>
+                <td><%=data.Subject5Grade%></td>
+                <td><%=data.Subject5Persentage%></td>
+            </tr>
+            <tr class="text-dark">
+                <td colspan="2" class="text-darks p-3">Total Marks</td>
+                <td><%=data.TotalMarks%></td>
+                <td><%=data.TotalObtainedMarks%></td>
+                <td><%=data.TotalGrade%></td>
+                <td><%=data.TotalPersentage%></td>
+            </tr>
+    
+        </tbody>
+    </table>
+    <section class="resultHeader text-center">
+    
+                <h6 class="text-dark text-center mt-2">...Followed Grading System...</h6>
+                <small class="text-dark ">Grade A-90 to 100%; Grade B-75 to 89%; Grade C-60 to 74%; Grade D-35 to 59%; Grade E-below 35% </small>
+                <br><small class="text-dark ">A public Sector University Establish Under Goverment of the punjab Act XIII of 2016</small>
+       
+    </section>
+    </section>
+    <section class="containerButton hide">
+        <button type="submit" class="btn btn-primary form-control" onclick="print()">Print Result</button>
+    </section>
+<%}%>
+<%-include("partials/footer")-%>

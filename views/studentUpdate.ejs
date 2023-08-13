@@ -1,0 +1,103 @@
+<%-include("partials/header")-%>
+
+
+    <section class="container my-5">
+    
+        <form action="/studentUpdate" method="post">
+            <section class="row">
+                <!-- student Name -->
+                <section class="col-6 form-group"><label for="SName">Student Name</label>
+                    <input type="text"  value="<%=data.Name%>" name="studentname" id="Sname" placeholder="Enter Student Name"
+                        class="form-control" autofocus autocomplete="off">
+                </section>
+                <!-- Roll Number -->
+
+                <section class="col-6 form-group"><label for="rollnumber">Roll Number</label>
+                    <input type="text" value="<%=data.RollNumber%>" name="studentrollnumber" placeholder="Enter Roll Number" id="rollnumber"
+                        class="form-control" autocomplete="off">
+                </section>
+            </section>
+            <section class=" row">
+                  <!-- Date of Birth -->
+                <section class="form-group col-6"> <label for="DOB">Date of Birth</label>
+                    <input type="date" value="<%=data.DateOfBirth%>" name="DOB" id="DOB" class="form-control" autocomplete="off">
+                </section>
+                <section class="form-group col-6"> <label for="email">Email</label>
+                    <input type="email" value="<%=data.Email%>" name="studentemail" id="email" placeholder="Enter Student Email"
+                        class="form-control" autocomplete="off">
+                </section>
+            </section>
+            <section class="row">
+                <section class="form-group col-6">
+                    <label for="number">Phone Number</label>
+                    <input type="tel" value="<%=data.PhoneNumber%>" name="studentNumber" id="number" placeholder="0000000000" class="form-control"
+                        autocomplete="off">
+                </section>
+                <section class="form-group col-6">
+                    <label for="CNIC">CNIC</label>
+                    <input type="text" value="<%=data.CNIC%>" name="studentCNIC" id="CNIC" placeholder="000-0000-000" class="form-control"
+                        autocomplete="off">
+                </section>
+            </section>
+            <section class="row">
+                <section class="form-group col-6">
+                    <label for="address">Address</label>
+                    <textarea type="text"  name="address" id="address" class="form-control"
+                        autocomplete="off"><%=data.Address%></textarea>
+                </section>
+                <section class="col-6">
+                    <section class="row">
+                        <section class="form-group col-6">
+                            <label for="courses">Courses</label><br />
+                            <select name="courses" class="form-select">
+                                <option selected>Select Courses</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Computer Scince">Computer Scince</option>
+                                <option value="Software Enginering">Software Enginering</option>
+                            </select>
+                        </section>
+
+                        <section class=" form-group col-6">
+                            <label for="semester">Semester</label><br />
+                            <select name="semester" class="form-select">
+                                <option selected>Select Semester</option>
+                                <option value="I">I</option>
+                                <option value="II">II</option>
+                                <option value="III">III</option>
+                                <option value="IV">IV</option>
+                                <option value="V">V</option>
+                                <option value="VI">VI</option>
+                                <option value="VII">VII</option>
+                                <option value="VIII">VIII</option>
+                            </select>
+                        </section>
+                        <section class="form-group col-6">
+                            <label for="Gender">Gender</label><br>
+                            <select name="Gender" class="form-select">
+                                <option selected>Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                </select>
+                        </section>
+                        <section class="form-group col-6">
+                            <label for="session">Session</label><br>
+                            <select name="session" id="session" class="form-select">
+                                    <option selected>Select Session</option>
+                                <option value="2019-2023">2019-2023</option>
+                                <option value="2020-2024">2020-2024</option>
+                                </select>
+                        </section>
+
+                    </section>
+                </section>
+               
+            </section>
+           
+            <section class="row">
+                <section class="col-6"> 
+                    <button type="submit" name="id" value="<%=data._id%>" class="btn btn-primary form-control mt-3">Submit</button>
+                </section>
+            </section>
+        </form>
+    </section>
+    <%-include("partials/footer")-%>

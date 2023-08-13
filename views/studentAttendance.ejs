@@ -1,0 +1,123 @@
+
+<% if(user==="admin@gmail.com"){ %>
+    <%-include("partials/header");-%>
+<% }else{ %>
+    <%-include("partials/student_header");-%>
+<% } %>
+<h4 class="text-center mt-3">Attendance</h4>
+
+       
+            <form action="showAttendance" method="post">
+                <section class="row">
+                    <section class="col-2">
+                        <label for="semester">Semester</label>
+                <select name="semester" class="form-select">
+                    <option selected>Select Semester</option>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                </select>
+                    </section>
+                    <section class="col-3">
+                            <label for="courses">Courses</label>
+                            <section class="d-flex">
+                            <select name="courses" class="form-select ">
+                                <option selected>Select Courses</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Computer Scince">Computer Scince</option>
+                                <option value="Software Enginering">Software Enginering</option>
+                            </select>
+                            
+                            
+                       </section>
+                    </section>
+                    <section class="form-group col-3">
+                        <label for="session">Session</label><br>
+                        <select name="session" id="session" class="form-select">
+                                <option selected>Select Session</option>
+                            <option value="2019-2023">2019-2023</option>
+                            <option value="2020-2024">2020-2024</option>
+                            </select>
+                    </section>
+                    <section class="col-3 pt-2 ">
+                      
+                            <section class="form-group d-flex mt-4">
+                     
+                   
+                    <input type="date" name="attendancedate" class="form-control  bor">
+                    <button class="btn btn-primary  borbutton">Search</button>
+                   </section>
+                    </section>
+            </section>
+            </form>
+     
+            <%if(data!==null){ %>
+         
+                <% for(let z=0; z<data.length; z++) {%>
+                
+            <div style="overflow-x: auto;">
+         <h5 class="text-center text-white bg-primary p-2 mt-3"><%=data[z].Date%>
+            <% if(user==="admin@gmail.com"){ %>
+                <span class=" fl">
+                    <form action="/attendanceDelete" method="post">
+                        <button class="bcs" name="date" value="<%=data[z].Date%>" type="submit">&times;</button>
+                    </form>
+                </span>
+            <% }%>
+       
+    </h5>
+            <table class="table text-white table-bordered table-hover mt-3" >
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Roll</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col" style="width: 200px;">Date of Birth</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Courses</th>
+                        <th scope="col">Semester</th>
+                        <th scope="col">CNIC</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Session</th>
+                        <th scope="col">Attendance</th>
+                    </tr>
+                </thead>
+             
+         
+                    <tbody>
+                     
+                            <% for(let i=0; i<data[z].Student.length; i++) {%>
+                        <tr>
+                            
+                            <td><%=data[z].Student[i].Name%></td>
+                            <td><%=data[z].Student[i].RollNumber%></td>
+                            <td><%=data[z].Student[i].Gender%></td>
+                            <td><%=data[z].Student[i].DateOfBirth%></td>
+                            <td><%=data[z].Student[i].Email%></td>
+                            <td><%=data[z].Student[i].Courses%></td>
+                            <td><%=data[z].Student[i].Semester%></td>
+                            <td><%=data[z].Student[i].CNIC%></td>
+                            <td><%=data[z].Student[i].PhoneNumber%></td>
+                            <td><%=data[z].Student[i].Address%></td>
+                            <td><%=data[z].Student[i].Session%></td>
+                            <td>
+                            <button type="button" class="btn btn-primary"><%=data[z].Student[i].Attandance%></button>
+                            </td>
+                        </tr>
+                        <%}%>
+                      
+                    </tbody>
+            </table>
+            </div>
+            <%}%>
+        
+   
+       
+         <%}%>
+         <%-include("partials/footer")-%>

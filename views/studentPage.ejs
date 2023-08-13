@@ -1,0 +1,35 @@
+<%-include("partials/student_header");-%>
+
+
+<%if(post){%>
+    <% for(let z= 0; z<post.length; z++) {%>   
+        <section class="container mt-5 mb-5">
+           <section class="container bgc p-1 mb-3">
+            <h3 class="text-white text-center"><%=post[z].Date%></h3>
+        
+           </section>
+            <section class="row mx-auto text-center">
+                <section class="col">Student Name</section>
+                <section class="col">Roll Number</section>
+                <section class="col">Attendance</section>
+                <hr>
+            </section>
+            <% for(let i= 0; i<post[z].Student.length; i++) {%>
+            <section class="row mx-auto text-center">
+          
+                <section class="col"><%=post[z].Student[i].Name%> </section>
+                <section class="col"><%=post[z].Student[i].RollNumber%></section>
+                <section class="col"><%=post[z].Student[i].Attendance%></section>
+                <hr>
+               
+            </section>
+            <%}%>
+        
+        </section>
+        <%}%>
+<%}%>
+
+    
+    <%-include("partials/footer"); -%>
+
+

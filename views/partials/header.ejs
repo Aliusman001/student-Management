@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="shortcut icon" href="image/ficon.jpg" type="image/x-icon">
+</head>
+
+<body class="text-white">
+    <nav class="navbar navbar-light navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="/home"><span><img src="image/logo.png" width="45px" class="mr-2" alt="" srcset=""></span>University of Okara</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <%if(active==='home'){%>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white navhover bg-hover" aria-current="page"
+                                href="/home">Home</a>
+                        </li>
+                        <%}else{%>
+                            <li class="nav-item">
+                                <a class="nav-link active text-white navhover" aria-current="page" href="/home">Home</a>
+                            </li>
+                            <%}%>
+                                <%if(active==='students'){%>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white navhover bg-hover" href="students">Students</a>
+                                    </li>
+                                    <%}else{%>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-white navhover" href="students">Students</a>
+                                        </li>
+                                        <%}%>
+                                            <%if(active==='attendance'){%>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-white navhover bg-hover"
+                                                        href="attendance">Attendance</a>
+                                                </li>
+                                                <%}else{%>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link text-white navhover"
+                                                            href="attendance">Attendance</a>
+                                                    </li>
+                                                    <%}%>
+                                                        <%if(active==='studentAttendance'){%>
+                                                            <li class="nav-item"><a class="nav-link text-white navhover bg-hover" href="studentAttendance">Search Attendance</a></li>
+                                                            <%}else{%>
+                                                                <li class="nav-item"><a class="nav-link text-white navhover"href="studentAttendance">Search Attendance</a> </li>
+                                                                <%}%>
+                                                                    <%if(active==='result'){%>
+                                                                        <li class="nav-item">
+                                                                            <a class="nav-link text-white navhover bg-hover"
+                                                                                href="/result">Result</a>
+                                                                        </li>
+                                                                        <%}else{%>
+                                                                            <li class="nav-item">
+                                                                                <a class="nav-link text-white navhover"
+                                                                                    href="/result">Result</a>
+                                                                            </li>
+                                                                            <%}%>
+
+                                                                                <%if(active==='searchResult'){%>
+                                                                                    <li class="nav-item">
+                                                                                        <a class="nav-link text-white navhover bg-hover"
+                                                                                            href="searchResult">Search
+                                                                                            Result</a>
+                                                                                    </li>
+                                                                                    <%}else{%>
+                                                                                        <li class="nav-item">
+                                                                                            <a class="nav-link text-white navhover"
+                                                                                                href="searchResult">Search
+                                                                                                Result</a>
+                                                                                        </li>
+                                                                                        <%}%>
+
+                                                                                            <%if(active==='contact'){%>
+                                                                                                <li class="nav-item">
+                                                                                                    <a class="nav-link text-white navhover bg-hover"
+                                                                                                        href="#">Contact
+                                                                                                        us</a>
+                                                                                                </li>
+                                                                                                <%}else{%>
+                                                                                                    <li
+                                                                                                        class="nav-item">
+                                                                                                        <a class="nav-link text-white navhover"
+                                                                                                            href="#">Contact
+                                                                                                            us</a>
+                                                                                                    </li>
+                                                                                                    <%}%>
+
+                                                                                                        <%if(active==='account'){%>
+                                                                                                            <li
+                                                                                                                class="nav-item">
+                                                                                                                <a class="nav-link text-white navhover bg-hover"
+                                                                                                                    href="/account">Account</a>
+                                                                                                            </li>
+                                                                                                            <%}else{%>
+                                                                                                                <li
+                                                                                                                    class="nav-item">
+                                                                                                                    <a class="nav-link text-white navhover"
+                                                                                                                        href="/account">Account</a>
+                                                                                                                </li>
+                                                                                                                <%}%>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
